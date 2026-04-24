@@ -56,19 +56,18 @@ local Settings = {
     SoundEnabled      = true,
 }
 
--- ============================================
--- SOUND (beep)
--- ============================================
+-- THAY HÀM BEEP CŨ BẰNG CÁI NÀY
 local function Beep(pitch)
     if not Settings.SoundEnabled then return end
-    local s = Instance.new("Sound", workspace)
-    s.SoundId = "rbxassetid://4612803745"
-    s.Volume  = 0.4
-    s.Pitch   = pitch or 1
-    s:Play()
-    game:GetService("Debris"):AddItem(s, 1)
+    pcall(function()
+        local s = Instance.new("Sound", workspace)
+        s.SoundId = "rbxassetid://9120386358" -- ID thay thế hoạt động được
+        s.Volume  = 0.4
+        s.Pitch   = pitch or 1
+        s:Play()
+        game:GetService("Debris"):AddItem(s, 1)
+    end)
 end
-
 -- ============================================
 -- NOTIFY
 -- ============================================
